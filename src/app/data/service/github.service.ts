@@ -20,7 +20,15 @@ export class GithubService {
 
   searchUsers(search: string) {
     return this.http
-      .get<Root>(`https://api.github.com/search/users?q=${search}`)
+      .get<Root>(`search/users?q=${search}`)
       .pipe(map((res) => res.items));
+  }
+
+  searchUserRepos(username: string) {
+    return this.http.get(`users/${username}/repos`);
+  }
+
+  listStargazers(username: string) {
+    return this.http.get(`users/${username}/starred`);
   }
 }
