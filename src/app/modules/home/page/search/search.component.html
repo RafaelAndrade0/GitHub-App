@@ -1,0 +1,18 @@
+<div class="container">
+  <form #f="ngForm" class="form" (ngSubmit)="submit(f.value)">
+    <input
+      type="text"
+      placeholder="Digite o nome do usuário..."
+      name="search"
+      required
+      ngModel
+    />
+    <input
+      type="submit"
+      name="user2"
+      value="Procurar!"
+      class="btn btn-primary btn-block"
+    />
+  </form>
+  <app-users></app-users>
+</div>
