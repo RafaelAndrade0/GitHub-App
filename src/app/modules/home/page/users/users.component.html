@@ -1,0 +1,7 @@
+<div *ngIf="$users | async as users">
+  <div class="grid-3">
+    <ng-container *ngFor="let user of users">
+      <app-user-card [user]="user"></app-user-card>
+    </ng-container>
+  </div>
+</div>
