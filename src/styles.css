@@ -304,7 +304,9 @@ img {
   opacity: 0.8;
 }
 
-.bg-light,
+.bg-light {
+  border-bottom: #ccc solid 10px;
+}
 .badge-light {
   border: #ccc solid 1px;
 }
@@ -369,13 +371,15 @@ table th {
 }
 
 .navbar a {
-  color: #fff;
+  color: #000000;
+  /* color: #fff; */
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
-  color: #f4f4f4;
+  color: #b4b4b4;
+  /* color: #f4f4f4; */
   /* color: var(--light-color); */
 }
 
