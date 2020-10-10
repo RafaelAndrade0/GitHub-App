@@ -7,9 +7,15 @@ import { SearchComponent } from './page/search/search.component';
 import { UserCardComponent } from './page/user-card/user-card.component';
 import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './page/users/users.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
-  declarations: [HomeComponent, SearchComponent, UserCardComponent, UsersComponent],
-  imports: [CommonModule, HomeRoutingModule, FormsModule],
+  declarations: [
+    HomeComponent,
+    SearchComponent,
+    UserCardComponent,
+    UsersComponent,
+  ],
+  imports: [CommonModule, HomeRoutingModule, FormsModule, NgxPaginationModule],
 })
 export class HomeModule {}

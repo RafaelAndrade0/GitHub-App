@@ -1,7 +1,17 @@
 <div *ngIf="$users | async as users">
   <div class="grid-3">
-    <ng-container *ngFor="let user of users">
+    <ng-container
+      *ngFor="
+        let user of users | paginate: { itemsPerPage: 10, currentPage: page }
+      "
+    >
       <app-user-card [user]="user"></app-user-card>
     </ng-container>
+    <!-- <ng-container *ngFor="let user of users">
+      <app-user-card [user]="user"></app-user-card>
+    </ng-container> -->
+  </div>
+  <div class="div-text-center">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>

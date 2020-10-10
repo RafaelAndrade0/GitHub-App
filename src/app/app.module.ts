@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataModule } from './data/data.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, FooterComponent],
@@ -23,6 +25,13 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    NgxPaginationModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      loaderId: 'loader-principal',
+      showForeground: true,
+      // exclude: [''],
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -14,15 +14,15 @@ import { BaseUrlInterceptor } from './interceptor/base-url.interceptor';
       useClass: BaseUrlInterceptor,
       multi: true,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
-      multi: true,
-    },
-    {
-      provide: LOCALE_ID,
-      useValue: 'pt',
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: LoadingInterceptor,
+    //   multi: true,
+    // },
+    // {
+    //   provide: LOCALE_ID,
+    //   useValue: 'pt',
+    // },
   ],
 })
 export class CoreModule {

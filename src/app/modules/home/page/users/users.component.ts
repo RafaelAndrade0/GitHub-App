@@ -10,6 +10,7 @@ export class UsersComponent implements OnInit {
   constructor(private githubService: GithubService) {}
 
   $users = this.githubService.$users;
+  page: number = 1;
 
   ngOnInit(): void {}
 }

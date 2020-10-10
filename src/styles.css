@@ -31,7 +31,7 @@ ul {
 }
 
 img {
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* Utilities */
@@ -95,6 +95,11 @@ img {
 .text-left {
   text-align: left;
 }
+
+/* .img-responsive {
+  width: 100%;
+  height: auto;
+} */
 
 /* Center All */
 .all-center {
@@ -318,6 +323,7 @@ img {
 /* Forms */
 input {
   margin: 1.2rem 0;
+  border-radius: 20px;
 }
 
 .form-text {
@@ -333,7 +339,7 @@ select,
 textarea {
   display: block;
   width: 100%;
-  padding: 0.4rem;
+  padding: 0.6rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
@@ -341,6 +347,11 @@ textarea {
 input[type="submit"],
 button {
   font: inherit;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #383838;
 }
 
 table th,
@@ -391,6 +402,11 @@ table th {
 @media (max-width: 700px) {
   .hide-sm {
     display: none;
+  }
+
+  .img-responsive {
+    width: 100%;
+    height: auto;
   }
 
   .grid-2,

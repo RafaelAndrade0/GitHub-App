@@ -1,5 +1,14 @@
-<app-loader></app-loader>
+<ng-container>
+  <div ngxUiLoaderBlurred [loaderId]="'loader-principal'">
+    <app-nav></app-nav>
 
-<app-nav></app-nav>
+    <router-outlet></router-outlet>
+  </div>
 
-<router-outlet></router-outlet>
+  <ngx-ui-loader
+    [loaderId]="'loader-principal'"
+    [text]="'Carregando....'"
+    [pbColor]="'#000000'"
+    [fgsColor]="'#fff'"
+  ></ngx-ui-loader>
+</ng-container>
