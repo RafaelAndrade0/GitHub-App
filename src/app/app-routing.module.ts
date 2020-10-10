@@ -14,6 +14,7 @@ const routes: Routes = [
       import('./modules/about/about.module').then((m) => m.AboutModule),
   },
   { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule) },
+  { path: 'repos', loadChildren: () => import('./modules/repos/repos.module').then(m => m.ReposModule) },
 ];
 
 @NgModule({

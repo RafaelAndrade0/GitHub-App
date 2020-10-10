@@ -1,0 +1,38 @@
+<div *ngIf="$repos | async as repos" class="container">
+  <div class="mb-1">
+    <button (click)="goBack()" class="btn btn-light">Voltar</button>
+  </div>
+  <div class="grid-2 repos">
+    <img
+      [src]="repos[0].owner.avatar_url"
+      class="round-img"
+      style="width: 60px"
+    />
+    <h1>Repositórios de @{{ repos[0].owner.login }}</h1>
+  </div>
+
+  <ng-container *ngFor="let repo of repos" }>
+    <div class="card text-center">
+      <div>
+        <div>
+          <h4>{{ repo.full_name }}</h4>
+          <p>{{ repo.description }}</p>
+        </div>
+      </div>
+
+      <div>
+        <span class="badge badge-primary">{{ repo.forks_count }} Forks</span>
+        <span class="badge badge-warning"
+          >{{ repo.stargazers_count }} Stars</span
+        >
+        <span class="badge badge-danger"
+          >{{ repo.watchers_count }} Watchers</span
+        >
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="repos.length === 0">
+    <p>O usuário não tem repositórios criados!</p>
+  </ng-container>
+</div>
