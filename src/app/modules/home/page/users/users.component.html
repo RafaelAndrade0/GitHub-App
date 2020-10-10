@@ -1,14 +1,14 @@
-<div *ngIf="$users | async as users">
+<div *ngIf="slicedUsers?.itens?.length > 0">
   <div class="grid-3">
-    <ng-container
-      *ngFor="
-        let user of users | paginate: { itemsPerPage: 10, currentPage: page }
-      "
-    >
+    <ng-container *ngFor="let user of slicedUsers.slicedItens">
       <app-user-card [user]="user"></app-user-card>
     </ng-container>
   </div>
-  <div class="div-text-center">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-  </div>
+  <button
+    *ngIf="!slicedUsers.thereIsMore"
+    (click)="showMore()"
+    class="btn btn-light m-1"
+  >
+    Ver mais
+  </button>
 </div>
