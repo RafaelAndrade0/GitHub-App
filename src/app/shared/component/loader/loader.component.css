@@ -1,6 +1,5 @@
 body {
   font-family: "Playfair Display", serif;
-  /* background: whitesmoke; */
   background: rgb(23, 22, 22);
   color: #fff;
 }
@@ -13,8 +12,7 @@ body {
   height: 100vh;
   width: 100%;
   background: white;
-  /* opacity: 0.9; */
-  /* background: rgb(23, 22, 22); */
+  opacity: 0.9;
   position: fixed;
   top: 0;
   left: 0;
@@ -25,5 +23,37 @@ body {
 .sk-cube-grid {
   width: 80px;
   height: 80px;
-  /* margin: 100px auto; */
+}
+
+.customize {
+  font-size: 80px;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0.08;
+
+    filter: blur(5px);
+    letter-spacing: 3px;
+  }
+  100% {
+  }
+}
+
+.animate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  font-family: Helvetica, sans-serif, Arial;
+  animation: load 1.2s infinite 0s ease-in-out;
+  animation-direction: alternate;
+  text-shadow: 0 0 1px white;
+}
+body,
+html {
+  height: 96vh;
+  background-color: #111;
+  color: white;
 }

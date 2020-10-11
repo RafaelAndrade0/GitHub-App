@@ -1,8 +1,10 @@
-<div class="card text-center">
+<div class="card grow text-center">
   <img [src]="user.avatar_url" alt="" class="round-img" style="width: 60px" />
   <h3>@{{ user.login }}</h3>
   <div class="grid-2 m-1">
     <span class="btn btn-dark" (click)="showReposPerUser()">Repos</span>
-    <span class="btn btn-danger" (click)="listStargazers()">Stars</span>
+    <span class="btn btn-danger" (click)="listStargazers(user.login)"
+      >Stars</span
+    >
   </div>
 </div>

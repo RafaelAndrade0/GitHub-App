@@ -1,4 +1,4 @@
-<div *ngIf="$repos | async as repos" class="container">
+<div *ngIf="$repos | async as repos; else noReposRouteError" class="container">
   <div class="mb-1">
     <button (click)="goBack()" class="btn btn-light">Voltar</button>
   </div>
@@ -12,27 +12,14 @@
   </div>
 
   <ng-container *ngFor="let repo of repos" }>
-    <div class="card text-center">
-      <div>
-        <div>
-          <h4>{{ repo.full_name }}</h4>
-          <p>{{ repo.description }}</p>
-        </div>
-      </div>
-
-      <div>
-        <span class="badge badge-primary">{{ repo.forks_count }} Forks</span>
-        <span class="badge badge-warning"
-          >{{ repo.stargazers_count }} Stars</span
-        >
-        <span class="badge badge-danger"
-          >{{ repo.watchers_count }} Watchers</span
-        >
-      </div>
-    </div>
+    <app-repo-card [repo]="repo"></app-repo-card>
   </ng-container>
 
   <ng-container *ngIf="repos.length === 0">
     <p>O usuário não tem repositórios criados!</p>
   </ng-container>
 </div>
+
+<ng-template #noReposRouteError>
+  <app-error-route></app-error-route>
+</ng-template>

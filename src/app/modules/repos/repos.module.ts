@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ReposRoutingModule } from './repos-routing.module';
 
 import { ReposComponent } from './page/repos.component';
+import { RepoCardComponent } from './page/repo-card/repo-card.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
-  declarations: [ReposComponent],
-  imports: [CommonModule, ReposRoutingModule],
+  declarations: [ReposComponent, RepoCardComponent],
+  imports: [ReposRoutingModule, SharedModule],
 })
 export class ReposModule {}

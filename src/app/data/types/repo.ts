@@ -6,6 +6,7 @@ export interface Repo {
   owner: Owner;
   description?: string;
   url: string;
+  html_url: string;
   homepage?: string;
   size: number;
   stargazers_count: number;

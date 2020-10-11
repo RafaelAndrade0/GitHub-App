@@ -26,7 +26,11 @@ export class UserCardComponent implements OnInit {
     });
   }
 
-  listStargazers() {
-    this.githubService.listStargazers(this.user.login).subscribe(console.log);
+  listStargazers(user: string) {
+    this.githubService.listStargazers(this.user.login).subscribe((stars) => {
+      this.githubService.setStars(stars);
+      this.githubService.setActualUser(this.user);
+      this.router.navigate(['../stars'], { relativeTo: this.route });
+    });
   }
 }
