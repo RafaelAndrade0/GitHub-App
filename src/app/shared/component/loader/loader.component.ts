@@ -22,9 +22,7 @@ export class LoaderComponent implements OnInit {
     private _changeDetectorRef: ChangeDetectorRef
   ) {}
 
-  ngOnInit() {
-    console.log('loader');
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     this._elmRef.nativeElement.style.display = 'none';
