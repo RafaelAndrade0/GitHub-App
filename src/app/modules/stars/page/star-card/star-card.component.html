@@ -1,0 +1,23 @@
+<div class="card text-center">
+  <div>
+    <div>
+      <h4>
+        <a [href]="star.html_url">{{ star.full_name }}</a>
+      </h4>
+      <p>{{ star.description }}</p>
+    </div>
+  </div>
+
+  <div>
+    <p>
+      Dev Original:
+      <span class="badge badge-dark"> @{{ star.owner.login }}</span>
+    </p>
+  </div>
+
+  <div>
+    <span class="badge badge-primary">{{ star.forks_count }} Forks</span>
+    <span class="badge badge-warning">{{ star.stargazers_count }} Stars</span>
+    <span class="badge badge-danger">{{ star.watchers_count }} Watchers</span>
+  </div>
+</div>
