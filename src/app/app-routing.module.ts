@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ErrorRouteComponent } from '@shared/component/error-route/error-route.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/repos/repos.module').then((m) => m.ReposModule),
   },
-  { path: 'stars', loadChildren: () => import('./modules/stars/stars.module').then(m => m.StarsModule) },
+  {
+    path: 'stars',
+    loadChildren: () =>
+      import('./modules/stars/stars.module').then((m) => m.StarsModule),
+  },
+  { path: '**', pathMatch: 'full', component: ErrorRouteComponent },
 ];
 
 @NgModule({
