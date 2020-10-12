@@ -1,23 +1,21 @@
 <div *ngIf="$repos | async as repos; else noReposRouteError" class="container">
-  <div class="mb-1">
-    <button (click)="goBack()" class="btn btn-light">Voltar</button>
-  </div>
-  <div class="grid-2 repos">
-    <img
-      [src]="repos[0].owner.avatar_url"
-      class="round-img"
-      style="width: 60px"
-    />
-    <h1>Repositórios de @{{ repos[0].owner.login }}</h1>
-  </div>
+  <div *ngIf="$actualUser | async as user">
+    <div class="mb-1">
+      <button (click)="goBack()" class="btn btn-light">Voltar</button>
+    </div>
+    <div class="grid-2 repos">
+      <img [src]="user.avatar_url" class="round-img" style="width: 60px" />
+      <h1>Repositórios de @{{ user.login }}</h1>
+    </div>
 
-  <ng-container *ngFor="let repo of repos" }>
-    <app-repo-card [repo]="repo"></app-repo-card>
-  </ng-container>
+    <ng-container *ngFor="let repo of repos" }>
+      <app-repo-card [repo]="repo"></app-repo-card>
+    </ng-container>
 
-  <ng-container *ngIf="repos.length === 0">
-    <p>O usuário não tem repositórios criados!</p>
-  </ng-container>
+    <ng-container *ngIf="repos.length === 0">
+      <p class="text-center">O usuário não tem repositórios criados!</p>
+    </ng-container>
+  </div>
 </div>
 
 <ng-template #noReposRouteError>

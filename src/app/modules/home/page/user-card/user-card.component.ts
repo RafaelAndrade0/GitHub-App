@@ -22,6 +22,7 @@ export class UserCardComponent implements OnInit {
   showReposPerUser() {
     this.githubService.searchUserRepos(this.user.login).subscribe((repos) => {
       this.githubService.setRepos(repos);
+      this.githubService.setActualUser(this.user);
       this.router.navigate(['../repos'], { relativeTo: this.route });
     });
   }

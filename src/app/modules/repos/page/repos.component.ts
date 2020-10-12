@@ -15,6 +15,7 @@ export class ReposComponent implements OnInit {
   ) {}
 
   $repos = this.githubService.$repos;
+  $actualUser = this.githubService.$actualUser;
 
   ngOnInit(): void {}
 
