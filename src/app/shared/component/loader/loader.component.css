@@ -1,59 +1,25 @@
-body {
-  font-family: "Playfair Display", serif;
-  background: rgb(23, 22, 22);
-  color: #fff;
-}
-
-.preloader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  background: white;
-  opacity: 0.9;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  transition: opacity 0.3s linear;
-}
-
-.sk-cube-grid {
-  width: 80px;
-  height: 80px;
-}
-
-.customize {
-  font-size: 80px;
-}
-
-@keyframes load {
+@keyframes loader-animation {
   0% {
-    opacity: 0.08;
-
-    filter: blur(5px);
-    letter-spacing: 3px;
+    left: -100%;
+  }
+  49% {
+    left: 100%;
+  }
+  50% {
+    left: 100%;
   }
   100% {
+    left: -100%;
   }
 }
 
-.animate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: auto;
-  font-family: Helvetica, sans-serif, Arial;
-  animation: load 1.2s infinite 0s ease-in-out;
-  animation-direction: alternate;
-  text-shadow: 0 0 1px white;
-}
-body,
-html {
-  height: 96vh;
-  background-color: #111;
-  color: white;
+.bar {
+  position: relative;
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  animation-name: loader-animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
