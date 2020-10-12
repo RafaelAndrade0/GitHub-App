@@ -12,6 +12,7 @@ import { DataModule } from './data/data.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 @NgModule({
   declarations: [AppComponent, NavComponent],
@@ -25,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    LoadingBarHttpClientModule,
     ToastrModule.forRoot(),
   ],
   providers: [],
